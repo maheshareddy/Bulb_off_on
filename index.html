@@ -12,7 +12,7 @@
         <div class="wire"></div>
         <div class="wire-connection"></div>
         <div class="socket-top"></div>
-        <div class="socket-bott"></div>
+        <div class="socket-bottom"></div>
         <div class="socket-back"></div>
         <div class="bulb-top"></div>
         <div class="bulb-bottom"></div>
@@ -24,4 +24,22 @@
         <div class="screw"></div>
     </div>
 </body>
+<script>
+    let isOpen = false;
+    let btn = document.querySelector(".switch");
+    let bulbTop = document.querySelector(".bulb-top");
+    let bulbBottom = document.querySelector(".bulb-bottom")
+    btn.addEventListener("click", function(){
+        if(isOpen){
+            btn.classList.remove("on")
+            bulbBottom.classList.remove("bulb_on");
+            bulbTop.classList.remove("bulb_on")
+        }else{
+            btn.classList.add("on");
+            bulbTop.classList.add("bulb_on");
+            bulbBottom.classList.add("bulb_on")
+        }
+        isOpen = !isOpen
+    })
+</script>
 </html>
